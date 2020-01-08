@@ -1,0 +1,17 @@
+<div class="formStyle">
+    <form class="form" (ngSubmit)="onSubmit()">
+      <div class="form-row" >
+        <div class="col">
+          <input  type="text" name="name" class="form-control" placeholder="name ..." [(ngModel)]="actor.name">
+        </div>
+        <div class="col">
+          <input name="lastname" type="text" class="form-control" placeholder="lastname" [(ngModel)]="actor.lastname">
+        </div>
+        <div class="col">
+          <input name="age" type="number" class="form-control" placeholder="age" [(ngModel)]="actor.age">
+        </div>
+      </div>
+  
+      <input type="submit" value="Submit" class="btn btn-primary" >
+  </form>
+  </div>

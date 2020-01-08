@@ -1,0 +1,25 @@
+<div [ngClass]="setClasses()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <p>
+                    <label for="{{movie}}">
+                        {{ movie.id }}
+                        {{ movie.name }}
+                        {{ movie.duration }}
+                        {{ movie.genere }}
+                        {{ movie.actorId }}   
+                    </label>
+                    
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                    <button (click)="onDelete(guest)" class="button" style="vertical-align:middle" ><span>Delete</span></button>
+                    <button (click)="onEdit(guest)" class="button" style="vertical-align:middle" ><span>Detail</span>Edit</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div> 

@@ -1,0 +1,6 @@
+<app-add-movie (addMovie)="addMovie($event)"></app-add-movie>
+<app-movie-item 
+*ngFor="let guest of guests" 
+[movie]="movie"
+(deleteMovie)="deleteMovie($event)">
+</app-movie-item>

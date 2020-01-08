@@ -1,0 +1,23 @@
+<div [ngClass]="setClasses()">
+  <div class="container-fluid">
+    <div class="row">
+        <div
+         class="col-md-9">
+  
+  <div>
+  
+      <label for="{{actor}}">
+        <ul> ActorName: 
+          {{ actor.name}} {{actor.lastname}}</ul>
+        </label>  <button (click)="onDelete(actor)" class="button" style="vertical-align:middle"><span>Delete</span></button>
+        <button (click)="onEdit(actor)" class="button" style="vertical-align:middle"><span>Edit</span></button>
+        <button (click)="this.showMovies=!this.showMovies" class="button" style="vertical-align:middle"><span>Movies</span></button>
+
+  </div>
+
+  <app-movies-of-actor *ngIf="this.showMovies" movies="this.movies">
+
+  </app-movies-of-actor>
+
+
+  

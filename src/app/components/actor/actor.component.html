@@ -1,0 +1,8 @@
+<app-add-actor (onSubmit)="onSubmit($event)" #actorForm></app-add-actor>
+<app-actor-item 
+  *ngFor="let actor of actors" 
+  [actor]="actor"
+  (deleteActor)="deleteActor($event)"
+  (editActor)="actorForm.loadEditData(actor,actor.id)"
+  >
+</app-actor-item>
