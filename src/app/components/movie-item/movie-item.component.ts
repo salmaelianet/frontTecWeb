@@ -11,7 +11,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MovieItemComponent implements OnInit {
 
-  @Input() movie=Movie;
+  @Input() movie:Movie;
   @Output() deleteMovie: EventEmitter<number>= new EventEmitter();
   constructor(private movieService:MovieService,private router: Router) { }
 
