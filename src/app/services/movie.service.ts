@@ -15,7 +15,7 @@ const httpOptions={
 })
 export class MovieService {
 
-  movieUrl:string='https://localhost:44322/api/movies';
+  movieUrl:string='https://localhost:44305/api/movies';
 
   constructor(private http:HttpClient) { }
 
