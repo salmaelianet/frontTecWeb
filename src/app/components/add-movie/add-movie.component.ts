@@ -20,7 +20,7 @@ export class AddMovieComponent implements OnInit {
   actorId:number;
   
   typeForm:TypeForm;
-  constructor() { this.id=null;this.typeForm=TypeForm.ADD;this.id=0; }
+  constructor() {this.typeForm=TypeForm.ADD;this.id=0; }
   
 
   ngOnInit() {

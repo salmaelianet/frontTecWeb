@@ -12,10 +12,10 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MovieItemComponent implements OnInit {
 
   @Input() movie:Movie;
+  @Output() editMovie: EventEmitter<Movie>= new EventEmitter();
   @Output() deleteMovie: EventEmitter<number>= new EventEmitter();
   constructor(private movieService:MovieService,private router: Router) { }
 
-  @Output() deleteActor:EventEmitter<Movie>=new EventEmitter();
 
   ngOnInit() {
   }
@@ -33,10 +33,10 @@ export class MovieItemComponent implements OnInit {
   }
   
   onEdit(movie:Movie){
-    this.router.navigateByUrl(`/actors/${movie.actorId}/guests/${movie.id}/edit`);
+    this.editMovie.emit(movie);
   }
   onDetail(movie:Movie){
-    this.router.navigateByUrl(`/actors/${movie.actorId}/guests/${movie.id}`);
+    this.router.navigateByUrl(`/actors/${movie.actorId}/movies/${movie.id}`);
 
   }
 
