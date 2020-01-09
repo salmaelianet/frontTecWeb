@@ -8,10 +8,14 @@ import { Movie } from 'src/app/models/Movie';
 })
 export class MoviesOfActorComponent implements OnInit {
 
-  @Input() movies:Movie[];
-  constructor() { }
+  @Input() 
+  public movies:Movie[];
+  constructor() {
+   
+  }
 
   ngOnInit() {
+  
   }
 
 }

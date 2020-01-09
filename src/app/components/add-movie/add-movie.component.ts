@@ -1,37 +1,59 @@
 import { Component, OnInit , EventEmitter, Output } from '@angular/core';
 import { Movie } from 'src/app/models/Movie';
 
+
+export enum TypeForm{ADD,EDIT}
+
 @Component({
   selector: 'app-add-movie',
   templateUrl: './add-movie.component.html',
   styleUrls: ['./add-movie.component.css']
 })
+
 export class AddMovieComponent implements OnInit {
-
-  @Output() addMovie: EventEmitter<any> = new EventEmitter();
-  constructor() { }
-    Id:number;
-    Name:string;
-    Duration:number;
-    Genre:string;
-    ActorId:number;
-
+  
+  @Output() onSubmit: EventEmitter<any> = new EventEmitter();
+  id:number;
+  name:string;
+  duration:number;
+  genre:string;
+  actorId:number;
+  
+  typeForm:TypeForm;
+  constructor() { this.id=null;this.typeForm=TypeForm.ADD;this.id=0; }
+  
 
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmitForm() {
     
     const movie = {
-        Id:this.Id,
-        Name:this.Name,
-        Duration:this.Duration,
-        Genre:this.Genre,
-        ActorId:this.ActorId
+        id:this.id,
+        name:this.name,
+        duration:this.duration,
+        genre:this.genre,
+        actorId:this.actorId
     
     }
-    this.addMovie.emit(movie);
+    this.onSubmit.emit({movie,typeForm:this.typeForm});
+
+    this.id=0;
+    this.name='';
+    this.duration=0;
+    this.genre='';
+    this.actorId=0;
+    this.typeForm=TypeForm.ADD;
     console.log(movie);
+  }
+
+  loadEditData(movie:Movie,id:number){
+    this.typeForm=TypeForm.EDIT;
+    this.id=id;
+    this.name=movie.name;
+    this.duration=movie.duration;
+    this.genre=movie.genre;
+    this.actorId=movie.actorId;
   }
 
 

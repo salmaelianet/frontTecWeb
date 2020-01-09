@@ -34,6 +34,7 @@ export class ActorComponent implements OnInit {
 
   onSubmit(result:any) {
     const{actor,typeForm}=result;
+    
     if (typeForm==TypeForm.ADD)
     {
       this.actorService.addActor(actor).subscribe(actor => {

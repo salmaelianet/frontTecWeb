@@ -1,6 +1,8 @@
-<app-add-movie (addMovie)="addMovie($event)"></app-add-movie>
+<app-add-movie (onSubmit)="onSubmit($event)" #movieForm></app-add-movie>
 <app-movie-item 
-*ngFor="let guest of guests" 
+*ngFor="let movie of movies" 
 [movie]="movie"
-(deleteMovie)="deleteMovie($event)">
+(deleteMovie)="deleteMovie($event)"
+(editMovie)="movieForm.loadEditData(movie,movie.id)"
+>
 </app-movie-item>

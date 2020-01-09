@@ -15,7 +15,7 @@ import { MovieService } from 'src/app/services/movie.service';
 export class ActorItemComponent implements OnInit {
 
   showMovies:boolean;
-  movies:Movie[];
+  public movies:Movie[];
 
   @Input() actor: Actor;
   @Output() deleteActor: EventEmitter<number> = new EventEmitter();

@@ -1,19 +1,22 @@
-<form class="form" (ngSubmit)="onSubmit()">
+<div class="formStyle">
+  <form class="form" (ngSubmit)="onSubmitForm()">
     <div class="form-row" >
       <div class="col">
         <input  type="text" name="name" class="form-control" placeholder="name ..." [(ngModel)]="name">
       </div>
+
       <div class="col">
         <input name="duration" type="number" class="form-control" placeholder="duration" [(ngModel)]="duration">
       </div>
-    </div>
-    <div class="form-row">
-        <div class="col">
+
+      <div class="col">
             <input name="genre" type="text" class="form-control" placeholder="Genre" [(ngModel)]="Genre">
-          </div>
-          <div class="col">
+      </div>
+          
+      <div class="col">
             <input name="actorId" type="number" class="form-control" placeholder="actor Id" [(ngModel)]="actorId">
-          </div>
+      </div>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary" >
-</form>
+  </form>
+</div>

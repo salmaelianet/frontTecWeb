@@ -16,20 +16,28 @@ export class AddActorComponent implements OnInit {
   age:number;
 
   typeForm:TypeForm;
-  constructor() { this.id=null;this.typeForm=TypeForm.ADD;}
+  constructor() { this.id=null;this.typeForm=TypeForm.ADD;this.id=0;}
 
   ngOnInit() {
   }
 
   onSubmitForm() {
     const actor = {
+      
       id: this.id,
       name: this.name,
       lastname: this.lastname,
       age: this.age
     }
 
+    
     this.onSubmit.emit({actor,typeForm:this.typeForm});
+    this.id=null;
+    this.typeForm=TypeForm.ADD;
+    this.name='';
+    this.lastname='';
+    this.age=0;
+    this.id=0;
     console.log(actor);
 
   }
